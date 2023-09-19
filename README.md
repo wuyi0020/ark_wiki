@@ -1,24 +1,6 @@
 # ark_wiki
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 介紹
+這是一個arknight的自製wiki
+資料來源於手動解包 所以就算長期不更新也很正常
+諾無繼續更新請耐心等待
