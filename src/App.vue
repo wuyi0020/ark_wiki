@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> | 
+    <router-link to="/character">Character</router-link>
   </nav>
   <router-view/>
 </template>
@@ -15,7 +16,7 @@
   color: #ffffff;
 }
 body{
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(0, 0, 0);
 }
 
 nav {
@@ -24,7 +25,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 nav a.router-link-exact-active {
