@@ -1,9 +1,11 @@
 <template>
-  <div class="home">
-    <div class="container wikihome">
-      <div class="banner">
-        <img src="../assets/(Sprite)avg_0_1.png" class="backbanner">
-        <div class="backdrop-blur"></div>
+  <div class="home ">
+    <div class="d-flex justify-content-center">
+      <div class="container">
+        <div class="banner">
+          <img src="../assets/(Sprite)avg_0_1.png" class="backbanner">
+          <div class="backdrop-blur"></div>
+        </div>
       </div>
     </div>
     <router-link to="/about"><img alt="Arinknight_Wiki" src="../assets/wiki_title.png" class="title"></router-link>
@@ -22,18 +24,23 @@ export default {
 }
 </script>
 
-<style>
-*{
+<style scoped>
+* {
   margin: 0;
   padding: 0;
 }
-.banner{
+.home{
+  overflow-x:hidden
+}
+.banner {
   position: relative;
   max-width: 100%;
 }
-.backbanner{
+
+.backbanner {
   max-width: 100%;
 }
+
 .backdrop-blur {
   position: absolute;
   top: 50%;
@@ -50,28 +57,31 @@ export default {
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   background-repeat: no-repeat;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 @keyframes backdrop-blur {
   0% {
 
     opacity: 1;
-    
-    transform:translateX(-50%) translateY(-50%) scale(100%) ;
+
+    transform: translateX(-50%) translateY(-50%) scale(100%);
   }
-  70%{
+
+  70% {
     opacity: 0.2;
     background-image: url('../assets/\(Sprite\)avg_0_2.png');
     backdrop-filter: blur(0px);
   }
+
   90% {
     opacity: 0;
-    transform:translateX(-50%) translateY(-50%) scale(150%);
+    transform: translateX(-50%) translateY(-50%) scale(150%);
   }
-  100%{
+
+  100% {
     opacity: 0;
-    transform:scale(0%);
+    transform: scale(0%);
   }
 
 }
