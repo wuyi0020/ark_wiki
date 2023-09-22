@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | 
-    <router-link to="/character">Character</router-link>
+    <router-link to="/">首頁</router-link> |
+    <router-link to="/character">角色圖鑑</router-link> |
+    <router-link to="/about">關於</router-link>
   </nav>
   <router-view/>
 </template>
@@ -21,6 +21,7 @@ body{
 
 nav {
   padding: 30px;
+  font-size: 1.5rem;
 }
 
 nav a {
