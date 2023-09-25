@@ -1,22 +1,31 @@
 <template>
     <div class="container ">
 
-        <div class="row raritycontainer  justify-content-center flex-wrap ">
-            <button class="rarity-collapse text-center d-flex  justify-content-center" data-bs-toggle="collapse" data-bs-target="#rarity-row">
+        <div class="row raritycontainer  justify-content-center flex-wrap d-flex d-lg-none">
+            <button class="rarity-collapse text-center d-flex  justify-content-center"      data-bs-toggle="collapse" data-bs-target="#rarity-row">
                 <h1 class="m-0">幹員星級</h1>
             </button>
-            <div class="flex-wrap collapse" id="rarity-row">
+            <div class="flex-wrap collapse row" id="rarity-row">
                 <div v-for="item in [0, 1, 2, 3, 4, 5]" :key="item.id"
                     class="col-12 col-sm-6 col-lg-3 col-xl-2 checkrarity">
                     <div class="rarity-btn-background">
                         <input type="checkbox" :value=item v-model="datas" :id="`rarity${item}`" v-show="false">
-                        <label :for="`rarity${item}`" class="rarity-btn rarity" @click="currentPage=0">
+                        <label :for="`rarity${item}`" class="rarity-btn rarity" @click="currentPage = 0">
                             <img :src="require(`@/assets/rarity/${item}.png`)" :class="`png png${item}`" alt="">
                         </label>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row raritycontainer flex-wrap d-none d-lg-flex">
+            <div v-for="item in [0, 1, 2, 3, 4, 5]" :key="item.id" class="col-12 col-sm-6 col-lg-3 col-xl-2 checkrarity ">
+                <div class="rarity-btn-background">
+                    <input type="checkbox" :value=item v-model="datas" :id="`rarity${item}`" v-show="false">
+                    <label :for="`rarity${item}`" class="rarity-btn rarity" @click="currentPage = 0">
+                        <img :src="require(`@/assets/rarity/${item}.png`)" :class="`png png${item}`" alt="">
+                    </label>
+                </div>
+            </div>
         </div>
         <div class="row justify-content-between align-items-center buttonrow">
             <button @click="prevPage" :disabled="currentPage === 0" class="col-5 col-sm-4  button">上一頁</button>
@@ -68,7 +77,7 @@ onMounted(() => {
         .sort(sortByMiddleNumber); // 使用自定义排序函数对角色进行排序
 })
 
-const FilterLists = computed(()=>{
+const FilterLists = computed(() => {
     let Lists = characterLists.value;
     if (datas.value.length !== 0) {
         Lists = Lists.filter((key) => {
