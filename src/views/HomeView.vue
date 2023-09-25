@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center">
       <div class="container">
         <div class="banner">
-          <img src="../assets/(Sprite)avg_0_1.png" class="backbanner">
+          <img src="@/assets/(Sprite)avg_0_1.png" class="backbanner">
           <div class="backdrop-blur"></div>
         </div>
       </div>

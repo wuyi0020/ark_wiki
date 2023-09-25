@@ -1,5 +1,23 @@
 <template>
-    <div class="container">
+    <div class="container ">
+
+        <div class="row raritycontainer  justify-content-center flex-wrap ">
+            <button class="rarity-collapse text-center d-flex  justify-content-center" data-bs-toggle="collapse" data-bs-target="#rarity-row">
+                <h1 class="m-0">幹員星級</h1>
+            </button>
+            <div class="flex-wrap collapse" id="rarity-row">
+                <div v-for="item in [0, 1, 2, 3, 4, 5]" :key="item.id"
+                    class="col-12 col-sm-6 col-lg-3 col-xl-2 checkrarity">
+                    <div class="rarity-btn-background">
+                        <input type="checkbox" :value=item v-model="datas" :id="`rarity${item}`" v-show="false">
+                        <label :for="`rarity${item}`" class="rarity-btn rarity" @click="currentPage=0">
+                            <img :src="require(`@/assets/rarity/${item}.png`)" :class="`png png${item}`" alt="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="row justify-content-between align-items-center buttonrow">
             <button @click="prevPage" :disabled="currentPage === 0" class="col-5 col-sm-4  button">上一頁</button>
             <div class="col-2 col-sm-4 currentPage">{{ currentPage + 1 }}</div>
@@ -31,6 +49,7 @@ import character_table from "@/assets/character_table.json"
 const characterLists = ref([])
 const itemsPerPage = 25 // 每页显示的项目数量
 const currentPage = ref(0) // 当前页数
+const datas = ref([]);
 
 // 自定义排序函数，按中间的数字排序
 function sortByMiddleNumber(a, b) {
@@ -44,29 +63,48 @@ onMounted(() => {
     characterLists.value = Object.keys(character_table)
         .filter(key => {
             const character = character_table[key]
-            return character.profession !== "TRAP" && character.profession !== "TOKEN" && character.displayNumber!== null
+            return character.profession !== "TRAP" && character.profession !== "TOKEN" && character.displayNumber !== null
         })
         .sort(sortByMiddleNumber); // 使用自定义排序函数对角色进行排序
-    })
+})
+
+const FilterLists = computed(()=>{
+    let Lists = characterLists.value;
+    if (datas.value.length !== 0) {
+        Lists = Lists.filter((key) => {
+            let character = character_table[key]
+            return datas.value.includes(character.rarity)
+        })
+    }
+    return Lists;
+})
 
 // 计算总页数
 const totalPages = computed(() => {
-    return Math.ceil(characterLists.value.length / itemsPerPage)
+    return Math.ceil(FilterLists.value.length / itemsPerPage)
 })
+
 
 // 根据当前页数过滤要显示的角色列表
 const displayedCharacters = computed(() => {
+    let displayCharlist = characterLists.value;
+    if (datas.value.length !== 0) {
+        displayCharlist = displayCharlist.filter((key) => {
+            let character = character_table[key]
+            return datas.value.includes(character.rarity)
+        })
+    }
     const start = currentPage.value * itemsPerPage
     const end = start + itemsPerPage
-    return characterLists.value.slice(start, end)
+    return displayCharlist.slice(start, end)
 })
+
 
 // 上一页按钮点击事件处理程序
 const prevPage = () => {
     if (currentPage.value > 0) {
         currentPage.value--
     }
-    console.log(characterLists.value);
 }
 
 // 下一页按钮点击事件处理程序
@@ -74,7 +112,6 @@ const nextPage = () => {
     if (currentPage.value < totalPages.value - 1) {
         currentPage.value++
     }
-    console.log(characterLists.value);
 }
 </script>
 
@@ -104,4 +141,34 @@ const nextPage = () => {
 .currentPage {
     font-size: 1.5rem;
 }
+
+input+label.rarity-btn.rarity>img.png {
+    filter: opacity(50%);
+}
+
+input:checked+label.rarity-btn.rarity>img.png {
+    filter: opacity(100%);
+}
+
+.raritycontainer {
+    background-image: url(../assets/background/back0.png);
+    margin-bottom: 1rem;
+    border: 3px dashed #828282;
+    box-sizing: border-box;
+}
+
+.rarity-btn-background {
+    width: fit-content;
+    background-color: #000000;
+    opacity: 0.7;
+    border-radius: 10px;
+}
+
+.checkrarity {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+label:nth-child(5),
+label:nth-child(6) {}
 </style>
