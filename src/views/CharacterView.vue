@@ -1,6 +1,5 @@
 <template>
     <div class="container ">
-
         <div class="row raritycontainer  justify-content-center flex-wrap d-flex d-lg-none">
             <button class="rarity-collapse text-center d-flex  justify-content-center"      data-bs-toggle="collapse" data-bs-target="#rarity-row">
                 <h1 class="m-0">幹員星級</h1>
@@ -45,8 +44,6 @@
             <div class="col-2 col-sm-4 currentPage">{{ currentPage + 1 }}</div>
             <button @click="nextPage" :disabled="currentPage === totalPages - 1" class="col-5 col-sm-4 button">下一頁</button>
         </div>
-
-
     </div>
 </template>
   
