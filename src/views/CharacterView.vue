@@ -54,12 +54,13 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
 import CharacterCard from '@/components/CharacterCard.vue'
-import character_table from "@/assets/JSON/character_table.json"
+import character_Table from "@/assets/JSON/character_table.json"
 
 const characterLists = ref([])
 const itemsPerPage = 25 // 每页显示的项目数量
 const currentPage = ref(0) // 当前页数
 const datas = ref([]);
+const character_table = character_Table[0];
 
 
 // 自定义排序函数，按中间的数字排序

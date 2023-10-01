@@ -41,10 +41,11 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { onUpdated, ref, computed } from "vue";
-import character_table from "@/assets/JSON/character_table.json";
+import character_Table from "@/assets/JSON/character_table.json";
+const character_table = character_Table[0];
 const route = useRoute();
 const character_Name = ref(route.params.charactname);
-``
+
 // const characterLists = ref([]);
 const profession = new Map([
     ["CASTER", "術師"],
