@@ -105,7 +105,7 @@ const character_description = computed(() => {
     let AllMatch = ""
     Match = description.match(rex);
     Match2 = description.match(rex_a);
-    if (Match && Match2) {
+    if (Match || Match2) {
         AllMatch = Match.concat(Match2);
         AllMatch = AllMatch.filter(Boolean);
         // let NewWords = [];
