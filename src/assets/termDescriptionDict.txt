@@ -1,0 +1,392 @@
+"termDescriptionDict": {
+    "ba.sluggish": {
+      "termId": "ba.sluggish",
+      "termName": "停頓",
+      "description": "移動速度降低80%"
+    },
+    "ba.root": {
+      "termId": "ba.root",
+      "termName": "束縛",
+      "description": "無法移動"
+    },
+    "ba.stun": {
+      "termId": "ba.stun",
+      "termName": "暈眩",
+      "description": "無法移動、阻擋、攻擊及使用技能"
+    },
+    "ba.buffres": {
+      "termId": "ba.buffres",
+      "termName": "抵抗",
+      "description": "<$ba.stun>暈眩</>、<$ba.cold>寒冷</>、<$ba.frozen>凍結</>等異常狀態的持續時間減半（同名效果不疊加）"
+    },
+    "ba.invisible": {
+      "termId": "ba.invisible",
+      "termName": "隱匿",
+      "description": "不阻擋時不成為敵方攻擊的目標"
+    },
+    "ba.camou": {
+      "termId": "ba.camou",
+      "termName": "迷彩",
+      "description": "不阻擋時不成為敵方普通攻擊的目標（無法躲避濺射類攻擊）"
+    },
+    "ba.fragile": {
+      "termId": "ba.fragile",
+      "termName": "脆弱",
+      "description": "受到的所有傷害提升相應比例（同名效果取最高）"
+    },
+    "ba.shield": {
+      "termId": "ba.shield",
+      "termName": "護盾",
+      "description": "每層護盾可以抵擋一次傷害"
+    },
+    "ba.protect": {
+      "termId": "ba.protect",
+      "termName": "庇護",
+      "description": "受到的物理和法術傷害降低相應比例（同名效果取最高）"
+    },
+    "ba.cold": {
+      "termId": "ba.cold",
+      "termName": "寒冷",
+      "description": "攻擊速度下降30，如果在持續時間內再次受到寒冷效果則會變為<$ba.frozen>凍結</>"
+    },
+    "ba.frozen": {
+      "termId": "ba.frozen",
+      "termName": "凍結",
+      "description": "無法移動、攻擊及使用技能（透過<$ba.cold>寒冷</>觸發）；敵方被凍結時，法術抗性-15"
+    },
+    "ba.sleep": {
+      "termId": "ba.sleep",
+      "termName": "沉睡",
+      "description": "無敵且無法行動"
+    },
+    "ba.inspire": {
+      "termId": "ba.inspire",
+      "termName": "鼓舞",
+      "description": "獲得額外附加的基礎屬性加成（同類屬性取最高）"
+    },
+    "ba.binding": {
+      "termId": "ba.binding",
+      "termName": "綁定",
+      "description": "綁定對象不在場時技能強制結束，清空所有技力且無法回復技力"
+    },
+    "ba.dt.neural": {
+      "termId": "ba.dt.neural",
+      "termName": "神經損傷",
+      "description": "神經損傷累計至1000時，受到1000點真實傷害並<$ba.stun>暈眩</>10秒"
+    },
+    "ba.charged": {
+      "termId": "ba.charged",
+      "termName": "蓄力",
+      "description": "技力達到上限可繼續回復，回復至上限2倍時進入蓄力狀態，此時開啟技能會觸發額外效果（任何時候開啟均消耗全部技力）"
+    },
+    "ba.strong": {
+      "termId": "ba.strong",
+      "termName": "精力充沛",
+      "description": "生命值高於一定比例時攻擊力加成提升相應比例（同名效果攻擊力加成取最高）"
+    },
+    "ba.dt.erosion": {
+      "termId": "ba.dt.erosion",
+      "termName": "侵蝕損傷",
+      "description": "侵蝕損傷累計至1000時，永久降低100點防禦力並受到800點物理傷害"
+    },
+    "ba.dt.burning": {
+      "termId": "ba.dt.burning",
+      "termName": "灼燃損傷",
+      "description": "灼燃損傷累計至1000時，10秒內降低20法術抗性並受到1200點法術傷害"
+    },
+    "ba.float": {
+      "termId": "ba.float",
+      "termName": "近地懸浮",
+      "description": "無法被阻擋或近戰攻擊"
+    },
+    "ba.refraction": {
+      "termId": "ba.refraction",
+      "termName": "折射",
+      "description": "生效時，法術抗性+70"
+    },
+    "ba.dt.element": {
+      "termId": "ba.dt.element",
+      "termName": "元素損傷",
+      "description": "包括<$ba.dt.neural>神經損傷</>、<$ba.dt.erosion>侵蝕損傷</>、<$ba.dt.burning>灼燃損傷</>、<$ba.dt.apoptosis>凋亡損傷</>"
+    },
+    "ba.overdrive": {
+      "termId": "ba.overdrive",
+      "termName": "超載",
+      "description": "技能持續擁有兩段計量槽，技能進行到一半時觸發額外效果"
+    },
+    "ba.dt.apoptosis": {
+      "termId": "ba.dt.apoptosis",
+      "termName": "凋亡損傷",
+      "description": "凋亡損傷累計至1000時，15秒內無法開啟技能，每秒損失1點技力並受到100點法術傷害"
+    },
+    "ba.debuff": {
+      "termId": "ba.debuff",
+      "termName": "異常狀態",
+      "description": "包括<$ba.stun>暈眩</>、<$ba.cold>寒冷</>、<$ba.frozen>凍結</>等"
+    },
+    "ba.levitate": {
+      "termId": "ba.levitate",
+      "termName": "浮空",
+      "description": "變為空中單位，無法移動、攻擊及使用技能；對重量大於3的單位持續時間減半"
+    },
+    "ba.physhield": {
+      "termId": "ba.physhield",
+      "termName": "物理護盾",
+      "description": "每層物理護盾可以抵擋一次物理傷害"
+    },
+    "ba.magicfragile": {
+      "termId": "ba.magicfragile",
+      "termName": "法術脆弱",
+      "description": "受到的法術傷害提升相應比例（同名效果取最高）"
+    },
+    "ba.dying": {
+      "termId": "ba.dying",
+      "termName": "重傷",
+      "description": "移速下降且無法被阻擋，10秒後自然死亡，被擊殺後使擊殺者回復數點技力"
+    },
+    "ba.barrier": {
+      "termId": "ba.barrier",
+      "termName": "屏障",
+      "description": "可以吸收一定數值的傷害"
+    },
+    "cc.bd_A_1": {
+      "termId": "cc.bd_A_1",
+      "termName": "念力",
+      "description": "擁有該基建技能的幹員\n迷迭香"
+    },
+    "cc.bd_A_2": {
+      "termId": "cc.bd_A_2",
+      "termName": "意識實體",
+      "description": "擁有該基建技能的幹員\n迷迭香"
+    },
+    "cc.bd_B_1": {
+      "termId": "cc.bd_B_1",
+      "termName": "徘徊旋律",
+      "description": "擁有該基建技能的幹員\n黑鍵"
+    },
+    "cc.bd_B_2": {
+      "termId": "cc.bd_B_2",
+      "termName": "悵惘和聲",
+      "description": "擁有該基建技能的幹員\n黑鍵"
+    },
+    "cc.bd_A": {
+      "termId": "cc.bd_A",
+      "termName": "思維鏈環",
+      "description": "可影響<$cc.bd_A_1><@cc.rem>念力</></>、<$cc.bd_A_2><@cc.rem>意識實體</></>相關技能\n由以下幹員的基建技能提供\n迷迭香"
+    },
+    "cc.bd_B": {
+      "termId": "cc.bd_B",
+      "termName": "無聲共鳴",
+      "description": "可影響<$cc.bd_B_1><@cc.rem>徘徊旋律</></>、<$cc.bd_B_2><@cc.rem>悵惘和聲</></>相關技能\n由以下幹員的基建技能提供\n黑鍵"
+    },
+    "cc.bd_a1": {
+      "termId": "cc.bd_a1",
+      "termName": "感知資訊",
+      "description": "可影響<$cc.bd_A><@cc.rem>思維鏈環</></>、<$cc.bd_B><@cc.rem>無聲共鳴</></>相關變數\n由以下幹員的基建技能提供\n迷迭香、黑鍵、夕、令、絮雨、愛麗絲、車爾尼"
+    },
+    "cc.bd_b1": {
+      "termId": "cc.bd_b1",
+      "termName": "人間煙火",
+      "description": "由以下幹員的基建技能提供\n夕、令、烏有、桑葚"
+    },
+    "cc.bd_ash": {
+      "termId": "cc.bd_ash",
+      "termName": "情報儲備",
+      "description": "由以下幹員的基建技能提供\nASH"
+    },
+    "cc.bd_tachanka": {
+      "termId": "cc.bd_tachanka",
+      "termName": "烏薩斯特飲",
+      "description": "由以下幹員的基建技能提供\nTACHANKA"
+    },
+    "cc.bd_malist": {
+      "termId": "cc.bd_malist",
+      "termName": "工程機器人",
+      "description": "由以下幹員的基建技能提供\n至簡"
+    },
+    "cc.bd_a1_a1": {
+      "termId": "cc.bd_a1_a1",
+      "termName": "記憶碎片",
+      "description": "可影響<$cc.bd_a1><@cc.rem>感知資訊</></>相關變數\n由以下幹員的基建技能提供\n絮雨"
+    },
+    "cc.bd_a1_a2": {
+      "termId": "cc.bd_a1_a2",
+      "termName": "夢境",
+      "description": "可影響<$cc.bd_a1><@cc.rem>感知資訊</></>相關變數\n由以下幹員的基建技能提供\n愛麗絲"
+    },
+    "cc.bd_a1_a3": {
+      "termId": "cc.bd_a1_a3",
+      "termName": "小節",
+      "description": "可影響<$cc.bd_a1><@cc.rem>感知資訊</></>相關變數\n由以下幹員的基建技能提供\n車爾尼"
+    },
+    "cc.bd.costdrop": {
+      "termId": "cc.bd.costdrop",
+      "termName": "心情落差",
+      "description": "幹員自身心情上限與當前心情值的差值"
+    },
+    "cc.m.var1": {
+      "termId": "cc.m.var1",
+      "termName": "回收利用",
+      "description": "擁有該基建技能的幹員\n紅雲"
+    },
+    "cc.m.var2": {
+      "termId": "cc.m.var2",
+      "termName": "配合意識",
+      "description": "擁有該基建技能的幹員\n槐琥"
+    },
+    "cc.t.snsant1": {
+      "termId": "cc.t.snsant1",
+      "termName": "天道酬勤·α",
+      "description": "擁有該基建技能的幹員\n雪雉"
+    },
+    "cc.t.snsant2": {
+      "termId": "cc.t.snsant2",
+      "termName": "天道酬勤·β",
+      "description": "擁有該基建技能的幹員\n雪雉"
+    },
+    "cc.g.lgd": {
+      "termId": "cc.g.lgd",
+      "termName": "龍門近衛局",
+      "description": "包含以下幹員\n陳、星熊、詩懷雅"
+    },
+    "cc.g.lda": {
+      "termId": "cc.g.lda",
+      "termName": "鯉氏偵探事務所",
+      "description": "包含以下幹員\n老鯉、阿、吽、槐琥"
+    },
+    "cc.g.ussg": {
+      "termId": "cc.g.ussg",
+      "termName": "烏薩斯學生自治團",
+      "description": "包含以下幹員\n早露、凜冬、真理、古米"
+    },
+    "cc.g.R6": {
+      "termId": "cc.g.R6",
+      "termName": "虹彩小隊",
+      "description": "包含以下幹員\nASH、TACHANKA、BLITZ、FROST"
+    },
+    "cc.g.sp": {
+      "termId": "cc.g.sp",
+      "termName": "異格",
+      "description": "包含所有異格幹員"
+    },
+    "cc.g.abyssal": {
+      "termId": "cc.g.abyssal",
+      "termName": "深海獵人",
+      "description": "包含以下幹員\n歌蕾蒂婭、斯卡蒂、幽靈鯊、安哲拉"
+    },
+    "cc.g.psk": {
+      "termId": "cc.g.psk",
+      "termName": "紅松騎士團",
+      "description": "包含以下幹員\n焰尾、遠牙、灰毫、野鬃、正義騎士號"
+    },
+    "cc.g.karlan": {
+      "termId": "cc.g.karlan",
+      "termName": "喀蘭貿易",
+      "description": "包含以下幹員\n銀灰、靈知、初雪、崖心、角峰、訊使、耶拉、極光"
+    },
+    "cc.g.sui": {
+      "termId": "cc.g.sui",
+      "termName": "歲",
+      "description": "包含以下幹員\n年、夕、令"
+    },
+    "cc.c.abyssal2_1": {
+      "termId": "cc.c.abyssal2_1",
+      "termName": "特殊加成",
+      "description": "每有1個<$cc.g.abyssal><@cc.kw>深海獵人</></>幹員進駐製造站，則控制中樞給每個進駐<$cc.g.abyssal><@cc.kw>深海獵人</></>的製造站提供<@cc.vup>5%</>生產力，最多給單個製造站提供<@cc.vup>45%</>生產力"
+    },
+    "cc.c.abyssal2_2": {
+      "termId": "cc.c.abyssal2_2",
+      "termName": "特殊加成",
+      "description": "每有1個<$cc.g.abyssal><@cc.kw>深海獵人</></>幹員進駐製造站，則控制中樞給每個進駐<$cc.g.abyssal><@cc.kw>深海獵人</></>的製造站提供<@cc.vup>10%</>生產力，最多給單個製造站提供<@cc.vup>90%</>生產力"
+    },
+    "cc.c.abyssal2_3": {
+      "termId": "cc.c.abyssal2_3",
+      "termName": "特殊疊加規則",
+      "description": "無法與<$cc.m.var2><@cc.rem>配合意識</></>進行疊加，且優先生效\n無法與<$cc.m.pow1><@cc.rem>自動化·α</></>、<$cc.m.pow2><@cc.rem>自動化·β</></>、<$cc.m.pow3><@cc.rem>仿生海龍</></>進行疊加，且清零效果優先生效"
+    },
+    "cc.c.room1": {
+      "termId": "cc.c.room1",
+      "termName": "部分設施",
+      "description": "包含以下設施\n發電站、人力辦公室、會客室"
+    },
+    "cc.c.room2": {
+      "termId": "cc.c.room2",
+      "termName": "其他設施",
+      "description": "包含以下設施\n發電站、製造站、貿易站、人力辦公室、會客室"
+    },
+    "cc.c.skill": {
+      "termId": "cc.c.skill",
+      "termName": "部分技能",
+      "description": "包含以下技能\n左膀右臂、S.W.E.E.P.、零食網路、清理協定、替身、必要責任、護衛、小小的領袖、獨善其身"
+    },
+    "cc.t.strong2": {
+      "termId": "cc.t.strong2",
+      "termName": "特殊疊加規則",
+      "description": "無法單獨與<$cc.t.snsant1><@cc.rem>天道酬勤·α</></>、<$cc.t.snsant2><@cc.rem>天道酬勤·β</></>進行疊加，且優先生效\n當<$cc.t.snsant1><@cc.rem>天道酬勤·α</></>、<$cc.t.snsant2><@cc.rem>天道酬勤·β</></>與其他技能進行疊加時，該技能會對此疊加效果進行疊加"
+    },
+    "cc.m.pow1": {
+      "termId": "cc.m.pow1",
+      "termName": "自動化·α",
+      "description": "由以下幹員提供\n溫蒂、森蚺、異客"
+    },
+    "cc.m.pow2": {
+      "termId": "cc.m.pow2",
+      "termName": "自動化·β",
+      "description": "由以下幹員提供\n森蚺"
+    },
+    "cc.m.pow3": {
+      "termId": "cc.m.pow3",
+      "termName": "仿生海龍",
+      "description": "由以下幹員提供\n溫蒂"
+    },
+    "cc.t.flow_gold": {
+      "termId": "cc.t.flow_gold",
+      "termName": "赤金生產線",
+      "description": "每有<@cc.kw>1</>間<@cc.kw>製造站</>生產<@cc.kw>赤金</>，則赤金生產線<@cc.kw>+1</>"
+    },
+    "cc.w.ncdeer1": {
+      "termId": "cc.w.ncdeer1",
+      "termName": "因果",
+      "description": "每當加工心情消耗<@cc.kw>4</>以下的配方未產出副產品時，所消耗的每<@cc.kw>1</>點心情轉化為<@cc.kw>1</>點<@cc.kw>因果</>"
+    },
+    "cc.w.ncdeer2": {
+      "termId": "cc.w.ncdeer2",
+      "termName": "業報",
+      "description": "每當加工心情消耗<@cc.kw>8</>的配方未產出副產品時，所消耗的每<@cc.kw>1</>點心情轉化為<@cc.kw>1</>點<@cc.kw>業報</>"
+    },
+    "cc.sk.manu1": {
+      "termId": "cc.sk.manu1",
+      "termName": "標準化類技能",
+      "description": "包含以下技能\n標準化·α、標準化·β"
+    },
+    "cc.sk.manu2": {
+      "termId": "cc.sk.manu2",
+      "termName": "萊茵科技類技能",
+      "description": "包含以下技能\n萊茵科技·α、萊茵科技·β"
+    },
+    "cc.sk.manu3": {
+      "termId": "cc.sk.manu3",
+      "termName": "紅松騎士團類技能",
+      "description": "包含以下技能\n紅松騎士團·α、紅松騎士團·β"
+    },
+    "cc.tag.op": {
+      "termId": "cc.tag.op",
+      "termName": "作業平台",
+      "description": "包含以下幹員\nLancet-2、Castle-3、THRM-EX、正義騎士號"
+    },
+    "cc.tag.knight": {
+      "termId": "cc.tag.knight",
+      "termName": "騎士",
+      "description": "包含以下幹員\n耀騎士臨光、臨光、瑕光、鞭刃、焰尾、遠牙、灰毫、野鬃、正義騎士號、礫"
+    },
+    "cc.tag.durin": {
+      "termId": "cc.tag.durin",
+      "termName": "杜林族",
+      "description": "包含以下幹員\n至簡、桃金娘、褐果、杜林"
+    },
+    "cc.gvial": {
+      "termId": "cc.gvial",
+      "termName": "嘉維爾",
+      "description": "包含以下幹員\n百煉嘉維爾、嘉維爾"
+    }
+  },

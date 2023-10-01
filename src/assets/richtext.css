@@ -1,0 +1,289 @@
+.mission_levelname {
+    color: #FFDE00
+}
+
+.mission_number {
+    color: #FFDE00
+}
+
+.tu_kw {
+    color: #0098DC
+}
+
+.tu_imp {
+    color: #FF0000
+}
+
+.cc_vup {
+    color: #0098DC
+}
+
+.cc_vdown {
+    color: #FF6237
+}
+
+.cc_rem {
+    color: #F49800
+}
+
+.cc_kw {
+    color: #00B0FF
+}
+
+
+.ba_vup {
+    color: #0098DC
+}
+
+.ba_vdown {
+    color: #FF6237
+}
+
+.ba_rem {
+    color: #F49800
+}
+
+.ba_kw {
+    color: #00B0FF
+}
+
+
+.ba_talpu {
+    color: #0098DC
+}
+
+.ba_xa {
+    color: #FF0000
+}
+
+.ba_xb {
+    color: #FF7D00
+}
+
+.ba_xc {
+    color: #FFFF00
+}
+
+.ba_xd {
+    color: #00FF00
+}
+
+.ba_xe {
+    color: #00FFFF
+}
+
+.ba_xf {
+    color: #0291FF
+}
+
+.ba_xg {
+    color: #FF00FF
+}
+
+.eb_key {
+    color: #00FFFF
+}
+
+.eb_danger {
+    color: #FF0000
+}
+
+.ro_get {
+    color: #0098DC
+}
+
+.ro_lose {
+    color: #C82A36
+}
+
+.rolv_rem {
+    color: #FF4C22
+}
+
+.lv_item {
+    color: #FFFFFF
+}
+
+.lv_rem {
+    color: #FFFFFF
+}
+
+.lv_fs {
+    color: #FF0000
+}
+
+.lv_sp {
+    color: #fd4600
+}
+
+.lv_ez {
+    color: #0098dc
+}
+
+.ro1_get {
+    color: #E5B684
+}
+
+.ro2_lose {
+    color: #FF6E6E
+}
+
+.ro2_get {
+    color: #59DDDC
+}
+
+.ro2_virtue {
+    color: #0098dc
+}
+
+.ro2_mutation {
+    color: #9266b2
+}
+
+.ro2_desc {
+    color: #6d6d6d
+}
+
+.rc_title {
+    color: #FFFFFF
+}
+
+.rc_subtitle {
+    color: #FFC90E
+}
+
+.rc_em {
+    color: #FF7F27
+}
+
+.rc_eml {
+    color: #32CD32
+}
+
+.ga_title {
+    color: #FFFFFF
+}
+
+.ga_subtitle {
+    color: #FFC90E
+}
+
+.ga_up {
+    color: #FF7F27
+}
+
+.ga_adgacha {
+    color: #00C8FF
+}
+
+.ga_nbgacha {
+    color: #00DDBB
+}
+
+.ga_limadgacha {
+    color: #FF7E1F
+}
+
+.ga_percent {
+    color: #FFD800
+}
+
+.ga_attention {
+    color: #FF3126
+}
+
+.attainga_desc {
+    color: #FF0000
+}
+
+.attainga_desc2 {
+    color: #FFD800
+}
+
+.attainga_attention {
+    color: #E1322C
+}
+
+.linkagega_charname {
+    color: #FFF6A9
+}
+
+.linkagega_title {
+    color: #FF8A00
+}
+
+.limtedga_title {
+    color: #FFFFFF
+}
+
+.limtedga_subtitle {
+    color: #FFC90E
+}
+
+.limtedga_up {
+    color: #FF7F27
+}
+
+.limtedga_21 {
+    color: #D7BCFF
+}
+
+.limtedga_percent {
+    color: #FFD800
+}
+
+.limtedga_attention {
+    color: #E1322C
+}
+
+.limtedga_lattention {
+    color: #FF9E58
+}
+
+.vc_newyear10 {
+    color: #FF3823
+}
+
+.vc_adgacha {
+    color: #0098DC
+}
+
+.vc_attention {
+    color: #FFD800
+}
+
+.act_missiontips {
+    color: #d9bd6a
+}
+
+.lv_hdbg {
+    color: #7ba61f
+}
+
+.tu_ht {
+    color: #ff8d00
+}
+
+.lv_act20side {
+    color: #F7BC44
+}
+
+.act_spreward {
+    color: #FF5001
+}
+
+.act_timelimit {
+    color: #ffe300
+}
+
+.vc_text {
+    color: #898989
+}
+
+.vc_endtime {
+    color: #ff0327
+}
+
+.dword{
+    color:#00B0FF;
+}

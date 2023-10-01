@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row  position-relative char-info-background">
             <div class="d-flex justify-content-center">
-                <img class="col-12 col-sm-12 col-md-9 col-lg-7 " :src="require(`@/assets/chartexture/${character_key}_1.png`)"
-                    alt="">
+                <img class="col-12 col-sm-12 col-md-9 col-lg-7 "
+                    :src="require(`@/assets/chartexture/${character_key}_1.png`)" alt="">
             </div>
             <div class="row">
                 <div class="col-3 charname-col position-absolute bottom-0 start-0 text-start ms-sm-0 ms-4">
@@ -19,22 +19,20 @@
                     :src="require(`@/assets/profession/${character_en_profession}.png`)" alt="">
             </div>
         </div>
-        <div class="row justify-content-center align-items-center character_itemUsage mt-4">
+        <div class="row justify-content-center  align-items-center character_itemUsage mt-4">
             <img class="col-3 col-lg-2" :src="require(`@/assets/char/${character_key}.png`)" alt="">
             <div class="col-7 col-lg-9 text-start .text-break">{{ character_itemUsage }}</div>
         </div>
-        <div class="row mt-4 character_description">
-            {{ character_description }}
+        <div class="row mt-4 justify-content-center align-items-center align-items-center character_description_row">
+            <div class="col-3 col-lg-2 .text-break d-flex align-self-stretch justify-content-center character_subProfessionId">
+                {{ character_subProfessionId }}
+            </div>
+            <div class="col-7 col-lg-9 character_description" v-html="character_description"></div>
         </div>
-        <br>
-        {{ character_itemUsage }}
-        <br>
-        {{ character_key }}
-        <br>
-        {{ character_profession }}
-        <br>
-        {{ character_info }}
-        <br>
+    </div>
+    <div>
+        <br> 
+        <br> 
     </div>
 </template>
 
@@ -42,21 +40,26 @@
 import { useRoute } from "vue-router";
 import { onUpdated, ref, computed } from "vue";
 import character_Table from "@/assets/JSON/character_table.json";
+import { subProfDict } from "@/assets/JSON/uniequip_table.json";
+
 const character_table = character_Table[0];
 const route = useRoute();
 const character_Name = ref(route.params.charactname);
+console.log(character_table);
+console.log(character_Name.value);
 
 // const characterLists = ref([]);
-const profession = new Map([
-    ["CASTER", "術師"],
-    ["SPECIAL", "特種"],
-    ["PIONEER", "先鋒"],
-    ["WARRIOR", "近衛"],
-    ["SNIPER", "狙擊"],
-    ["TANK", "重裝"],
-    ["MEDIC", "醫療"],
-    ["SUPPORT", "輔助"]
-])
+
+// const profession = new Map([
+//     ["CASTER", "術師"],
+//     ["SPECIAL", "特種"],
+//     ["PIONEER", "先鋒"],
+//     ["WARRIOR", "近衛"],
+//     ["SNIPER", "狙擊"],
+//     ["TANK", "重裝"],
+//     ["MEDIC", "醫療"],
+//     ["SUPPORT", "輔助"]
+// ])
 
 onUpdated(() => {
     character_Name.value = route.params.charactname;
@@ -66,16 +69,16 @@ const character_key = computed(() => {
         .filter(keys => {
             return character_table[keys].name == character_Name.value;
         })
-    console.log(info);
     return info
 })
+console.log(character_key.value);
 const character_info = computed(() => {
     let key = character_key.value;
     return character_table[key];
 })
-const character_profession = computed(() => {
-    return profession.get(character_info.value.profession);
-})
+// const character_profession = computed(() => {
+//     return profession.get(character_info.value.profession);
+// })
 const character_en_profession = computed(() => {
     return character_info.value.profession;
 })
@@ -83,7 +86,6 @@ const character_EnName = computed(() => {
     let rex = new RegExp("[^_]+$")
     let en = character_key.value[0];
     let match = en.match(rex);
-    console.log(match);
     return match[0];
 })
 const character_itemUsage = computed(() => {
@@ -92,8 +94,37 @@ const character_itemUsage = computed(() => {
 const character_rarity = computed(() => {
     return character_info.value.rarity;
 })
-const character_description = computed(()=>{
-    return character_info.value.description;
+const character_description = computed(() => {
+    let rex = new RegExp("(<@.*?>)","g");
+    let rex_a = new RegExp(/(<\$.*?>)/,"g");
+    let rex2 = new RegExp("(</>)","g");
+    let description = character_info.value.description;
+    // let description = "攻擊造成<@ba.kw>群體<@ba.AA>法術</><@ba.cc>法術</>傷害</>";
+    let Match="";
+    let Match2="";
+    let AllMatch=""
+    Match=description.match(rex);
+    Match2=description.match(rex_a);
+    if(Match && Match2){
+        AllMatch=Match.concat(Match2);
+        AllMatch =AllMatch.filter(Boolean);
+        // let NewWords = [];
+        AllMatch.forEach((element) => {
+            let NewWord="";
+            NewWord = element.replace("@",'span class="');
+            NewWord = NewWord.replace("$",'span class="dword ');
+            NewWord = NewWord.replace(".","_");
+            NewWord = NewWord.replace(">",'">');
+            description=description.replace(element,NewWord)
+        });
+    }
+    // let Match2=description.match(rex2)
+    // description = description.replace(rex,"")
+    description = description.replace(rex2,"</span>")
+    return description;
+})
+const character_subProfessionId = computed(() => {
+    return subProfDict[character_info.value.subProfessionId].subProfessionName;
 })
 
 </script>
@@ -125,15 +156,23 @@ const character_description = computed(()=>{
     background-size: cover;
 }
 
-
-.character_itemUsage img{
+.character_itemUsage img {
     border-left: 4px solid #818181;
+    border-right: 4px solid #818181;
+    background-color: rgba(81, 81, 81, 0.3);
 }
-.character_itemUsage{
+
+.character_itemUsage {
     font-size: 2rem;
 }
 
-.character_description{
+.character_description_row {
     font-size: 1.5rem;
+}
+.character_subProfessionId{
+    background-color: rgba(81, 81, 81, 0.3);
+    border-left: 4px solid #818181;
+    border-right: 4px solid #818181;
+    height: 100%;
 }
 </style>
