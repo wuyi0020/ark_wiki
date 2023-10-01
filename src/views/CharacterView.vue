@@ -1,7 +1,9 @@
 <template>
     <div class="container ">
+
         <div class="row raritycontainer  justify-content-center flex-wrap d-flex d-lg-none">
-            <button class="rarity-collapse text-center d-flex  justify-content-center"      data-bs-toggle="collapse" data-bs-target="#rarity-row">
+            <button class="rarity-collapse text-center d-flex  justify-content-center" data-bs-toggle="collapse"
+                data-bs-target="#rarity-row">
                 <h1 class="m-0">幹員星級</h1>
             </button>
             <div class="flex-wrap collapse row" id="rarity-row">
@@ -35,8 +37,10 @@
             <!-- <img v-for="character in displayedCharacters" :src="require('@/assets/char/' + character + '.png')"
                 :key="character" class="col-3"> -->
             <div v-for="character in displayedCharacters" :key="character" class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <CharacterCard :imageurl='character' :rarity="character_table[character].rarity"
-                    :name=character_table[character].name />
+                <router-link :to="`/charactinfo/${character_table[character].name}`" class="character-link">
+                    <CharacterCard :imageurl='character' :rarity="character_table[character].rarity"
+                        :name=character_table[character].name />
+                </router-link>
             </div>
         </div>
         <div class="row justify-content-between align-items-center buttonrow">
@@ -50,12 +54,13 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
 import CharacterCard from '@/components/CharacterCard.vue'
-import character_table from "@/assets/character_table.json"
+import character_table from "@/assets/JSON/character_table.json"
 
 const characterLists = ref([])
 const itemsPerPage = 25 // 每页显示的项目数量
 const currentPage = ref(0) // 当前页数
 const datas = ref([]);
+
 
 // 自定义排序函数，按中间的数字排序
 function sortByMiddleNumber(a, b) {
@@ -71,6 +76,7 @@ onMounted(() => {
             const character = character_table[key]
             return character.profession !== "TRAP" && character.profession !== "TOKEN" && character.displayNumber !== null
         })
+        // .reverse();
         .sort(sortByMiddleNumber); // 使用自定义排序函数对角色进行排序
 })
 
@@ -122,6 +128,18 @@ const nextPage = () => {
 </script>
 
 <style scoped>
+:root {
+    --font-color: white;
+    --background-color: #000000;
+    --btn-border-color: #818181;
+    --box-shadow-color: #c9c9c9;
+}
+
+.character-link {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
 .buttonrow {
     margin-bottom: 64px;
 }
@@ -138,9 +156,8 @@ const nextPage = () => {
 }
 
 .button:active {
-    box-shadow: 0px 2px 0px #d35400;
     position: relative;
-    box-shadow: 0px 6px 6px #727272;
+    box-shadow: 0px 6px 0px #727272;
     top: 2px;
 }
 
@@ -174,7 +191,4 @@ input:checked+label.rarity-btn.rarity>img.png {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
-label:nth-child(5),
-label:nth-child(6) {}
 </style>
