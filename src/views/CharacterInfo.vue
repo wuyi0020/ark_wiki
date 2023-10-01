@@ -7,10 +7,9 @@
             </div>
             <div class="row">
                 <div class="col-3 charname-col position-absolute bottom-0 start-0 text-start ms-sm-0 ms-4">
-                    <p class="img_rarity m-0">
-                        <img :src="require(`@/assets/rarity/${character_rarity}.png`)" alt="">
-                    </p>
-                    <p class="en">{{ character_EnName }}</p>
+                    <img class="img_rarity m-0 d-none d-md-inline" :src="require(`@/assets/rarity/${character_rarity}.png`)"
+                        alt="">
+                    <p class="en m-0">{{ character_EnName }}</p>
                     <p>{{ character_info.name }}</p>
                 </div>
             </div>
@@ -24,15 +23,16 @@
             <div class="col-7 col-lg-9 text-start .text-break">{{ character_itemUsage }}</div>
         </div>
         <div class="row mt-4 justify-content-center align-items-center align-items-center character_description_row">
-            <div class="col-3 col-lg-2 .text-break d-flex align-self-stretch justify-content-center character_subProfessionId">
+            <div
+                class="col-3 col-lg-2 .text-break d-flex align-self-stretch justify-content-center character_subProfessionId">
                 {{ character_subProfessionId }}
             </div>
             <div class="col-7 col-lg-9 character_description" v-html="character_description"></div>
         </div>
     </div>
     <div>
-        <br> 
-        <br> 
+        <br>
+        <br>
     </div>
 </template>
 
@@ -95,32 +95,32 @@ const character_rarity = computed(() => {
     return character_info.value.rarity;
 })
 const character_description = computed(() => {
-    let rex = new RegExp("(<@.*?>)","g");
-    let rex_a = new RegExp(/(<\$.*?>)/,"g");
-    let rex2 = new RegExp("(</>)","g");
+    let rex = new RegExp("(<@.*?>)", "g");
+    let rex_a = new RegExp(/(<\$.*?>)/, "g");
+    let rex2 = new RegExp("(</>)", "g");
     let description = character_info.value.description;
     // let description = "攻擊造成<@ba.kw>群體<@ba.AA>法術</><@ba.cc>法術</>傷害</>";
-    let Match="";
-    let Match2="";
-    let AllMatch=""
-    Match=description.match(rex);
-    Match2=description.match(rex_a);
-    if(Match && Match2){
-        AllMatch=Match.concat(Match2);
-        AllMatch =AllMatch.filter(Boolean);
+    let Match = "";
+    let Match2 = "";
+    let AllMatch = ""
+    Match = description.match(rex);
+    Match2 = description.match(rex_a);
+    if (Match && Match2) {
+        AllMatch = Match.concat(Match2);
+        AllMatch = AllMatch.filter(Boolean);
         // let NewWords = [];
         AllMatch.forEach((element) => {
-            let NewWord="";
-            NewWord = element.replace("@",'span class="');
-            NewWord = NewWord.replace("$",'span class="dword ');
-            NewWord = NewWord.replace(".","_");
-            NewWord = NewWord.replace(">",'">');
-            description=description.replace(element,NewWord)
+            let NewWord = "";
+            NewWord = element.replace("@", 'span class="');
+            NewWord = NewWord.replace("$", 'span class="dword ');
+            NewWord = NewWord.replace(".", "_");
+            NewWord = NewWord.replace(">", '">');
+            description = description.replace(element, NewWord)
         });
     }
     // let Match2=description.match(rex2)
     // description = description.replace(rex,"")
-    description = description.replace(rex2,"</span>")
+    description = description.replace(rex2, "</span>")
     return description;
 })
 const character_subProfessionId = computed(() => {
@@ -135,16 +135,16 @@ const character_subProfessionId = computed(() => {
 
 .charname-col {
     font-family: 'Noto Serif TC', serif;
-    font-size: 5rem;
     user-select: none;
     line-height: 1;
+    font-size: 10vmin;
     text-shadow: -2px -2px 0 rgba(0, 0, 0, .3), 2px -2px 0 rgba(0, 0, 0, .3), -2px 2px 0 rgba(0, 0, 0, .3), 2px 2px 0 rgba(0, 0, 0, .3);
     margin-bottom: 0px;
 }
 
 .charname-col .en {
     font-family: 'Noto Serif TC', serif;
-    font-size: 1.5rem;
+    font-size: 9vmin;
     user-select: none;
     line-height: 1;
     text-shadow: -2px -2px 0 rgba(0, 0, 0, .3), 2px -2px 0 rgba(0, 0, 0, .3), -2px 2px 0 rgba(0, 0, 0, .3), 2px 2px 0 rgba(0, 0, 0, .3);
@@ -169,10 +169,10 @@ const character_subProfessionId = computed(() => {
 .character_description_row {
     font-size: 1.5rem;
 }
-.character_subProfessionId{
+
+.character_subProfessionId {
     background-color: rgba(81, 81, 81, 0.3);
     border-left: 4px solid #818181;
     border-right: 4px solid #818181;
     height: 100%;
-}
-</style>
+}</style>
