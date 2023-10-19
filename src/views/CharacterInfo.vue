@@ -76,6 +76,7 @@ const character_info = computed(() => {
     let key = character_key.value;
     return character_table[key];
 })
+console.log(character_info.value);
 // const character_profession = computed(() => {
 //     return profession.get(character_info.value.profession);
 // })
@@ -108,7 +109,7 @@ const character_description = computed(() => {
     if (Match || Match2) {
         AllMatch = Match.concat(Match2);
         AllMatch = AllMatch.filter(Boolean);
-        // let NewWords = [];
+
         AllMatch.forEach((element) => {
             let NewWord = "";
             NewWord = element.replace("@", 'span class="');
@@ -118,14 +119,16 @@ const character_description = computed(() => {
             description = description.replace(element, NewWord)
         });
     }
-    // let Match2=description.match(rex2)
-    // description = description.replace(rex,"")
     description = description.replace(rex2, "</span>")
     return description;
 })
 const character_subProfessionId = computed(() => {
     return subProfDict[character_info.value.subProfessionId].subProfessionName;
 })
+const character_phases = computed(()=>{
+    return character_info.value.phases
+})
+console.log(character_phases);
 
 </script>
 
@@ -135,18 +138,21 @@ const character_subProfessionId = computed(() => {
 
 .charname-col {
     font-family: 'Noto Serif TC', serif;
+    font-size: min(7vw,70px);
     user-select: none;
+    white-space:nowrap;
     line-height: 1;
-    font-size: 10vmin;
     text-shadow: -2px -2px 0 rgba(0, 0, 0, .3), 2px -2px 0 rgba(0, 0, 0, .3), -2px 2px 0 rgba(0, 0, 0, .3), 2px 2px 0 rgba(0, 0, 0, .3);
     margin-bottom: 0px;
 }
 
 .charname-col .en {
     font-family: 'Noto Serif TC', serif;
-    font-size: 9vmin;
+    font-size: min(6vw,60px);
     user-select: none;
+    white-space:nowrap;
     line-height: 1;
+    margin-bottom: 0.3rem;
     text-shadow: -2px -2px 0 rgba(0, 0, 0, .3), 2px -2px 0 rgba(0, 0, 0, .3), -2px 2px 0 rgba(0, 0, 0, .3), 2px 2px 0 rgba(0, 0, 0, .3);
 }
 
